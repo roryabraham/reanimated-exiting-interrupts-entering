@@ -27,6 +27,11 @@ To run it on iOS in Expo Go, run `npx expo start --ios`, or run `npx expo start`
 - [Web](./docs/exiting-interrupts-entering-web.webm): Hide is pressed about 800ms after Show, twice. The square's opacity goes from about 0.40 to 1.00 in one frame. The dark readout is test instrumentation injected by Playwright, not part of the app.
 - [iOS](./docs/exiting-interrupts-entering-ios.mp4): recorded in Expo Go on the iOS simulator, with `App.tsx` temporarily changed to press Show and Hide on its own, 800ms apart. The square's opacity goes from 0.33 to 1.00 in one frame.
 
+These were recorded the same way, with the fix from the pull request linked on [issue #11092](https://github.com/software-mansion/react-native-reanimated/issues/11092) applied to `node_modules`:
+
+- [Web, with the fix](./docs/exiting-interrupts-entering-web-fixed.webm) (Reanimated `4.8.0-nightly-20261029-c51fd79b3`): the opacity jumped from 0.40 to 1.00 before the fix, and now fades out from 0.40.
+- [iOS, with the fix](./docs/exiting-interrupts-entering-ios-fixed.mp4) (Reanimated 4.7.1): the opacity jumped from 0.33 to 1.00 before the fix, and now fades out from 0.33.
+
 ## Versions
 
 | Package | Version |
